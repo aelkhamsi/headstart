@@ -25,7 +25,7 @@ import { ApplicationStatusService } from '../services/application-status.service
 import { UpdateApplicationStatusDto } from '../dto/update-application-status.dto';
 import { SerializedUser } from 'src/modules/user/entities/serialized-user';
 
-@Controller('mmc-api/applications')
+@Controller('headstart-api/applications')
 export class ApplicationController {
   constructor(
     private readonly applicationService: ApplicationService,

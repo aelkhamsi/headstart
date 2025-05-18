@@ -19,7 +19,7 @@ import { Roles } from 'src/decorators/roles.decorator';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { ADMIN_ROLE, USER_ROLE } from 'src/constants';
 
-@Controller('mmc-api/users')
+@Controller('headstart-api/users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

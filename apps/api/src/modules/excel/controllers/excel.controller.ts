@@ -12,7 +12,7 @@ import { ADMIN_ROLE } from 'src/constants';
 import { Roles } from 'src/decorators/roles.decorator';
 import { Response } from 'express';
 
-@Controller('mmc-api/excel')
+@Controller('headstart-api/excel')
 export class ExcelController {
   constructor(private readonly excelService: ExcelService) {}
 

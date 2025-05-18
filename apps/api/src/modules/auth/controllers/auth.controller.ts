@@ -17,7 +17,7 @@ import { ADMIN_ROLE } from 'src/constants';
 import { RolesGuard } from 'src/guards/roles.guard';
 import { Roles } from 'src/decorators/roles.decorator';
 
-@Controller('mmc-api/auth')
+@Controller('headstart-api/auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 

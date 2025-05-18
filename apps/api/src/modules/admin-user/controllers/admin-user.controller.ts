@@ -18,7 +18,7 @@ import { RolesGuard } from 'src/guards/roles.guard';
 import { ADMIN_ROLE } from 'src/constants';
 import { Roles } from 'src/decorators/roles.decorator';
 
-@Controller('mmc-api/admin')
+@Controller('headstart-api/admin')
 export class AdminUserController {
   constructor(private readonly adminUserService: AdminUserService) {}
 

@@ -12,9 +12,9 @@ import { Toaster } from "@mdm/ui";
 
 
 export const metadata = {
-  title: "MMC 2025",
-  description: "MMC: The ultimate university math challenge",
-  metadataBase: new URL("https://mmc.mathmaroc.org"),
+  title: "headstart",
+  description: "",
+  metadataBase: new URL("https://google.com"),
 };
 
 export default async function RootLayout({
