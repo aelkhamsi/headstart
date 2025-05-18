@@ -1,0 +1,45 @@
+version: '3.1'
+
+services:
+  # MySQL database service
+  mmc_db:
+    image: mysql
+    container_name: mmc_db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+
+  # phpMyAdmin service
+  mmc_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: mmc_phpmyadmin
+    links:
+      - mmc_db
+    environment:
+      - PMA_HOST=mmc_db
+      - PMA_PORT=3306
+      - PMA_ARBITRARY=1
+    restart: always
+    ports:
+      - 8080:80
+
+  # Node.js API service
+  mmc_api:
+    image: node
+    container_name: mmc_api
+    restart: always
+    depends_on:
+      - mmc_db
+    ports:
+      - "5000:5000"
+    volumes:
+      - ".:/home/node/app"
+    environment:
+      - MYSQL_HOST=mmc_db
+    working_dir: /home/node/app
+    command: npm run start:dev

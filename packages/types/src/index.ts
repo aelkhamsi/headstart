@@ -1,3 +1,1 @@
-export interface Test {
-	value: string;
-}
+export { default as User } from './User'
