@@ -1,4 +1,4 @@
-type User = {
+export type User = {
   id: number;
 
   firstName: string;
@@ -10,6 +10,6 @@ type User = {
   identifier: string;
 
   application: any;
-}
 
-export default User;
+  team: any;
+}

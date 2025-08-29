@@ -10,11 +10,10 @@ import JotaiContextProvider from "./jotaiContextProvider";
 import { DataProvider } from "../providers/data.provider";
 import { Toaster } from "@mdm/ui";
 
-
 export const metadata = {
-  title: "headstart",
-  description: "",
-  metadataBase: new URL("https://google.com"),
+  title: "MTYM 2025",
+  description: "MTYM: Explorer, Élaborer, Collaborer",
+  metadataBase: new URL("https://mtym.mathmaroc.org"),
 };
 
 export default async function RootLayout({

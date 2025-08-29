@@ -29,41 +29,36 @@ export const Menu = () => {
         <NavigationMenuItem>
           <Link 
             className="text-sm font-medium mr-6 hover:cursor-pointer hover:underline"
+            href="/past-edition"
+            onClick={() => {setShowMenu(false)}}
+          >
+            Edition passée
+          </Link>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <Link 
+            className="text-sm font-medium mr-6 hover:cursor-pointer hover:underline"
             href="/selection"
             onClick={() => {setShowMenu(false)}}
           >
-            Selection Test
+            Test de sélection
           </Link>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link 
-            className="text-sm font-medium mr-6 hover:cursor-pointer hover:underline"
-            href="/past-editions"
-            onClick={() => {setShowMenu(false)}}
-          >
-            Past Editions
-          </Link>
-        </NavigationMenuItem>
+          <NavigationMenuTrigger className="text-sm mr-6">Organizateurs & Partenaires</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[200px] gap-2 p-2 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
+              <Link href="/organizing-team" onClick={() => {setShowMenu(false)}}>
+                <ListItem title="Équipe organisatrice" />
+              </Link>
 
-        <NavigationMenuItem>
-          <Link 
-            className="text-sm font-medium mr-6 hover:cursor-pointer hover:underline"
-            href="/organizing-team"
-            onClick={() => {setShowMenu(false)}}
-          >
-            Organizing Team
-          </Link>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link 
-            className="text-sm font-medium mr-6 hover:cursor-pointer hover:underline" 
-            href="/partners"
-            onClick={() => {setShowMenu(false)}}
-          >
-            Partners
-          </Link>
+              <Link href="/partners" onClick={() => {setShowMenu(false)}}>
+                <ListItem title="Partenaires" />
+              </Link>
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
@@ -85,7 +80,7 @@ export const Menu = () => {
 
       <div 
         className={(isMobile || isTablet) 
-          ? `absolute min-h-screen w-full top-14 left-0 bg-white p-4 ${!showMenu ? 'hidden' : ''} transition-all text-center`
+          ? `absolute min-h-screen w-full top-14 left-0 bg-white text-black p-4 ${!showMenu ? 'hidden' : ''} transition-all text-center`
           : ''
         }
       >

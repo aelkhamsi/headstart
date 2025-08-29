@@ -45,7 +45,7 @@ export function UserNav({
         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
           <Avatar className="h-9 w-9 border-solid border-2 border-sky-300">
             <AvatarImage src="/avatars/01.png" alt="@shadcn" />
-            <AvatarFallback className="text-base">{firstName[0]}</AvatarFallback>
+            <AvatarFallback className="text-base text-black">{firstName[0]}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
@@ -63,7 +63,7 @@ export function UserNav({
           <DropdownMenuItem
             onClick={() => router.push('/profile/account')}
           >
-            Profile
+            Profil
           </DropdownMenuItem>
         </DropdownMenuGroup>
         
@@ -72,7 +72,7 @@ export function UserNav({
         <DropdownMenuItem
           onClick={handleLogOut}
         >
-          Log out
+          Se déconnecter
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
