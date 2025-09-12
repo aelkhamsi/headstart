@@ -1,4 +1,4 @@
-import { Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
+import { Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
 import { FaqService } from "../services/faq.service";
 import { CreateFaqEntryDto } from "../dto/create-faq-entry.dto";
 import { UpdateFaqEntryDto } from "../dto/update-faq-entry.dto";
@@ -36,7 +36,7 @@ export class FaqController {
     return this.faqService.updateById(id, updateFaqEntryDto)
   }
 
-  @Get(':id')
+  @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   async deleteById(@Param('id', ParseIntPipe) id: number) {
     return this.faqService.deleteById(id)
