@@ -12,22 +12,19 @@ export class FaqController {
   @Post()
   @HttpCode(HttpStatus.CREATED)
   async create(createFaqEntryDto: CreateFaqEntryDto) {
-    const faqEntry = this.faqService.create(createFaqEntryDto)
-    return faqEntry
+    return this.faqService.create(createFaqEntryDto)
   }
 
   @Get()
   @HttpCode(HttpStatus.OK)
   async findAll() {
-    const faqEntries = await this.faqService.findAll()
-    return faqEntries
+    return this.faqService.findAll()
   }
 
   @Get(':id')
   @HttpCode(HttpStatus.OK)
   async findOneById(@Param('id', ParseIntPipe) id: number) {
-    const faqEntry = await this.faqService.findOneById(id)
-    return faqEntry
+    return this.faqService.findOneById(id)
   }
 
   @Put(':id')

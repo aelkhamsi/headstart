@@ -14,21 +14,15 @@ export class FaqService {
 
   create(createFaqEntryDto: CreateFaqEntryDto) {
     const faqEntry = this.faqRepository.create(createFaqEntryDto)
-    this.faqRepository.save(faqEntry)
-    return faqEntry
+    return this.faqRepository.save(faqEntry)
   }
 
   findAll() {
-    return this.faqRepository
-      .createQueryBuilder('faq_entry')
-      .getMany()
+    return this.faqRepository.find()
   }
 
   findOneById(id: number) {
-    return this.faqRepository
-      .createQueryBuilder('faq_entry')
-      .where('faq_entry.id = :id', { id })
-      .getOne()
+    return this.faqRepository.findOneBy({ id })
   }
 
   updateById(id: number, updateFaqEntryDto: UpdateFaqEntryDto) {
