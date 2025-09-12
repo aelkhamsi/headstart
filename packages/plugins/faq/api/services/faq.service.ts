@@ -29,5 +29,9 @@ export class FaqService {
       .where('faq_entry.id = :id', { id })
       .getOne()
   }
+
+  deleteById(id: number) {
+    return this.faqRepository.delete({ id })
+  }
 } 
 

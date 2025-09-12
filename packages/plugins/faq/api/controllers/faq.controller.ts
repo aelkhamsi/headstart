@@ -28,4 +28,10 @@ export class FaqController {
     const faqEntry = await this.faqService.findOneById(id)
     return faqEntry
   }
+
+  @Get(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  async deleteById(@Param('id', ParseIntPipe) id: number) {
+    return this.faqService.deleteById(id)
+  }
 }
