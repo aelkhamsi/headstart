@@ -8,6 +8,6 @@ import { FaqService } from './services/faq.service';
   imports: [TypeOrmModule.forFeature([FaqEntry])],
   controllers: [FaqController],
   providers: [FaqService],
-  exports: [],
+  exports: [FaqService],
 })
 export class FaqModule {}
