@@ -1,6 +1,7 @@
-import { Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post } from "@nestjs/common";
+import { Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
 import { FaqService } from "../services/faq.service";
 import { CreateFaqEntryDto } from "../dto/create-faq-entry.dto";
+import { UpdateFaqEntryDto } from "../dto/update-faq-entry.dto";
 
 @Controller('headstart-api/faq')
 export class FaqController {
@@ -27,6 +28,12 @@ export class FaqController {
   async findOneById(@Param('id', ParseIntPipe) id: number) {
     const faqEntry = await this.faqService.findOneById(id)
     return faqEntry
+  }
+
+  @Put(':id')
+  @HttpCode(HttpStatus.OK)
+  async updateById(@Param('id', ParseIntPipe) id: number, updateFaqEntryDto: UpdateFaqEntryDto) {
+    return this.faqService.updateById(id, updateFaqEntryDto)
   }
 
   @Get(':id')

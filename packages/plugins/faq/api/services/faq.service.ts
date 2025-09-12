@@ -4,6 +4,7 @@ import { Repository } from "typeorm";
 import { FaqEntry } from "../entities/faq.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import { CreateFaqEntryDto } from "../dto/create-faq-entry.dto";
+import { UpdateFaqEntryDto } from "../dto/update-faq-entry.dto";
 
 @Injectable()
 export class FaqService {
@@ -28,6 +29,10 @@ export class FaqService {
       .createQueryBuilder('faq_entry')
       .where('faq_entry.id = :id', { id })
       .getOne()
+  }
+
+  updateById(id: number, updateFaqEntryDto: UpdateFaqEntryDto) {
+    return this.faqRepository.update({ id }, updateFaqEntryDto)
   }
 
   deleteById(id: number) {
